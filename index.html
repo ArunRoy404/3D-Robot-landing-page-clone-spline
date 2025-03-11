@@ -1,11 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3D Robot</title>
+
+    <!-- tailwind  -->
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+    <!-- google font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+
+    <style>
+        .doto{
+            font-family: "Doto", sans-serif;
+            font-style: normal;
+        }
+
+        .roboto,
+        body {
+            font-family: "Roboto", sans-serif;
+            font-style: normal;
+        }
+
+        .subtitle-container {
+            width: 180px;
+            height: 30px;
+            border-radius: 20px;
+            position: relative;
+            background: linear-gradient(to right, purple, white, purple);
+            background-size: 200%;
+            animation: gradientAnimation 2.5s linear infinite;
+        }
+
+        @keyframes gradientAnimation {
+            to {
+                background-position: 200%;
+            }
+        }
+
+        .subtitle {
+            cursor: pointer;
+            position: absolute;
+            background-color: black;
+            inset: 2px;
+            border-radius: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
 </head>
-<body>
-    
+
+<body class="bg-black text-gray-200 min-h[100vh]">
+    <header>
+        <nav class="flex py-3 items-center justify-between px-3 mx-5">
+            <!-- logo  -->
+            <div>
+                <h1 class="doto text-6xl font-bold uppercase">RoboBuddy</h1>
+            </div>
+
+            <!-- links  -->
+            <div class="hidden xl:block">
+                <ul class="flex gap-10">
+                    <li><a href="">COMPANY</a></li>
+                    <li><a href="">FEATURES</a></li>
+                    <li><a href="">RESOURCES</a></li>
+                    <li><a href="">DOCS</a></li>
+                </ul>
+            </div>
+
+            <!-- button  -->
+            <div class="hidden xl:block">
+                <button class="border-2 px-8 py-2 rounded-full cursor-pointer">
+                    SIGN IN
+                </button>
+            </div>
+
+            <!-- menu bar  -->
+            <div class="xl:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </div>
+        </nav>
+    </header>
+    <main class="min-h-[85vh] relative sm:flex justify-center items-center p-5">
+        <!-- hero container  -->
+        <div class="container mx-auto flex flex-col-reverse md:flex-row justify-around items-center">
+
+            <!-- text container -->
+            <div class="space-y-7">
+                <div class="subtitle-container">
+                    <h2 class="subtitle">Introducing</h2>
+                </div>
+                <h1 class="text-6xl font-bold tracking-wider uppercase">
+                    Meet RoboBuddy: <br>
+                    Your Friendly Digital Companion</h1>
+                <p class="font-medium uppercase">
+                    Discover the future of technology with RoboBuddy, the charming 3D robot designed to enhance your
+                    experience. <br>
+                    Ready to assist, explore, and entertain with every interaction.
+                </p>
+
+                <!-- button container -->
+                <div class="xl:flex space-y-3 xl:space-y-0 gap-6 items-center">
+                    <div>
+                        <button
+                            class="border-[0.5px] px-8 py-2 rounded-full cursor-pointer text-purple-400">Explore Features ></button>
+                    </div>
+                    <div>
+                        <button class="bg-gray-200 px-8 py-2 rounded-full cursor-pointer text-black">Get Started ></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- robot container  -->
+            <div class="h-[600px] md:w-[600px] z-10">
+                <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.75/build/spline-viewer.js"></script>
+                <spline-viewer url="https://prod.spline.design/9bXbAJhgaDIKR8vf/scene.splinecode"></spline-viewer>
+            </div>
+        </div>
+
+        <div class="-z-10">
+            <img class=" absolute top-0 right-0" src="gradient.png" alt="">
+            <div style=" box-shadow: 0px 0px 700px 20px white;" class="w-[30rem] absolute top-[20%] right-0"></div>
+        </div>
+    </main>
+    <footer></footer>
+    <script>
+        const e = document.querySelectorAll('.logo')
+        console.log(e)
+    </script>
 </body>
+
 </html>
