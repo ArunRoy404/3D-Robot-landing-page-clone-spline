@@ -44,7 +44,24 @@
                 background-position: 200%;
             }
         }
-
+        @keyframes fadeDown {
+            0%{
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+        }
+        @keyframes fadeInRight {
+            0%{
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+        }
+        @keyframes fadeInLeft {
+            0%{
+                transform: translateX(50px);
+                opacity: 0;
+            }
+        }
         .subtitle {
             cursor: pointer;
             position: absolute;
@@ -55,6 +72,35 @@
             justify-content: center;
             align-items: center;
         }
+
+        nav h1{
+            animation: fadeDown 0.5s linear;
+        }
+        nav li:nth-child(1){
+            animation: fadeDown 1s linear;
+        }
+        nav li:nth-child(2){
+            animation: fadeDown 1.5s linear;
+        }
+        nav li:nth-child(3){
+            animation: fadeDown 2s linear;
+        }
+        nav li:nth-child(4){
+            animation: fadeDown 2.5s linear;
+        }
+        nav button{
+            animation: fadeDown 3s linear;
+        }
+        #text-container{
+            animation: fadeInRight 1s linear;
+        }
+        #text-container button{
+            animation: fadeInRight 1.5s linear;
+        }
+        #robot{
+            animation: fadeInLeft 1s linear;
+        }
+
     </style>
 </head>
 
@@ -98,7 +144,7 @@
         <div class="container mx-auto flex flex-col-reverse md:flex-row justify-around items-center">
 
             <!-- text container -->
-            <div class="space-y-7">
+            <div id="text-container" class="space-y-7">
                 <div class="subtitle-container">
                     <h2 class="subtitle">Introducing</h2>
                 </div>
@@ -124,7 +170,7 @@
             </div>
 
             <!-- robot container  -->
-            <div class="h-[600px] md:w-[600px] z-10">
+            <div id="robot" class="h-[600px] md:w-[600px] z-10">
                 <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.75/build/spline-viewer.js"></script>
                 <spline-viewer url="https://prod.spline.design/9bXbAJhgaDIKR8vf/scene.splinecode"></spline-viewer>
             </div>
