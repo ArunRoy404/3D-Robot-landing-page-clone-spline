@@ -62,6 +62,11 @@
                 opacity: 0;
             }
         }
+        @keyframes fadeIn {
+            0%{
+                opacity: 0;
+            }
+        }
         .subtitle {
             cursor: pointer;
             position: absolute;
@@ -99,6 +104,9 @@
         }
         #robot{
             animation: fadeInLeft 1s linear;
+        }
+        #bg-layer{
+            animation: fadeIn 1s linear;
         }
 
     </style>
@@ -176,7 +184,7 @@
             </div>
         </div>
 
-        <div class="-z-10">
+        <div id="bg-layer" class="-z-10">
             <img class=" absolute top-0 right-0" src="gradient.png" alt="">
             <div style=" box-shadow: 0px 0px 700px 20px white;" class="w-[30rem] absolute top-[20%] right-0"></div>
         </div>
